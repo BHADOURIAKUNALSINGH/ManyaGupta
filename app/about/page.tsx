@@ -67,11 +67,11 @@ export default function About() {
   const skills = [
     "Product Design", "UI Design", "UX Design", "Wireframing", "Prototyping",
     "User Research", "Visual Design", "Interaction Design", "Figma", "Canva",
-    "Affinity", "HTML/CSS", "React/Next.js", "Information Architecture"
+    "Affinity", "HTML/CSS", "Design Thinking", "Information Architecture"
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5EFE6] text-black overflow-x-hidden selection:bg-[#361B19]/10 selection:text-[#361B19]">
+    <div className="min-h-screen bg-[#F5EFE6] text-black overflow-x-clip selection:bg-[#361B19]/10 selection:text-[#361B19]">
       <Navbar />
 
       <main className="max-w-6xl mx-auto px-6 pt-32 pb-24 space-y-24">
@@ -79,7 +79,7 @@ export default function About() {
         {/* HERO SECTION - ABOUT */}
         <section className="flex flex-col md:flex-row gap-12 items-center justify-between">
           {/* Left Block */}
-          <div className="w-full md:w-3/5 space-y-6">
+          <div className="w-full md:w-3/5 space-y-6 md:-translate-y-10">
             <span className="text-xs uppercase tracking-widest font-semibold text-[#361B19]/60">About</span>
             <h1 className="text-5xl md:text-6xl font-extrabold text-[#361B19] font-heading tracking-tight leading-none">
               Hi, I&apos;m MANYA<span className="text-[#F4B3A8]">.</span>
@@ -93,17 +93,17 @@ export default function About() {
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
               <a
-                href="/resume.pdf"
+                href="/manya_resume.pdf.pdf"
                 download
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F4B3A8] text-[#361B19] hover:bg-[#F4B3A8]/90 font-bold transition-all shadow-md text-sm cursor-pointer"
               >
                 Download resume ⬇
               </a>
               <a
-                href="mailto:hello@manyagupta.com"
+                href="mailto:manyag.3007@gmail.com"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#361B19] bg-transparent text-[#361B19] hover:bg-[#361B19]/5 font-mono font-bold transition-all text-sm cursor-pointer"
               >
-                hello@manyagupta.com
+                manyag.3007@gmail.com
               </a>
             </div>
           </div>

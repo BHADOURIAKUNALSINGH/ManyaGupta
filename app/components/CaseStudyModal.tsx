@@ -104,6 +104,8 @@ function ScrollImage({ src, title, scrollContainerRef }: ScrollImageProps) {
 const getCaseStudyImage = (projectId: string) => {
   if (projectId === "aura") return "/portfolio/case-study.webp";
   if (projectId === "vertex") return "/vertex.png";
+  if (projectId === "canon") return "/canon_card.png";
+  if (projectId === "dodge") return "/dodge_card.png";
   if (projectId === "chronos") return "/chronos.png";
   return "/portfolio/case-study.webp";
 };

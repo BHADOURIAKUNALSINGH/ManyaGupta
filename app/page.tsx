@@ -7,14 +7,14 @@ import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#F5EFE6] text-black selection:bg-[#361B19] selection:text-[#361B19]">
+    <div className="min-h-screen bg-[#F5EFE6] text-black selection:bg-[#361B19] selection:text-[#361B19] overflow-x-clip">
       <Navbar />
       
       {/* SECTION 1 - HERO */}
       <section className="relative min-h-[95vh] flex flex-col justify-center overflow-hidden">
         
         {/* Centered Stacked Layout */}
-        <div className="relative z-10 flex-grow flex flex-col justify-center items-center py-12">
+        <div className="relative z-10 flex-grow flex flex-col justify-center items-center py-13">
           
           {/* Full bleed name */}
           <h1 className="w-full text-center font-extrabold tracking-tighter uppercase text-[#361B19] select-none leading-none z-20"
@@ -28,9 +28,9 @@ export default function Home() {
           </div>
 
           {/* Intro Description */}
-          <div className="max-w-xl space-y-6 text-center mt-5">
+          <div className="max-w-xl space-y-6 text-center">
             <p className="text-m text-black leading-snug font-light">
-              Designer who loves making tech useful, usable and beautiful for people globally
+              Designer who loves making tech useful,<br/> usable and beautiful for people globally
             </p>
 
             {/* <div className="flex gap-6 justify-center items-center pt-2">
@@ -41,7 +41,7 @@ export default function Home() {
                 View selected work
               </a>
               <a 
-                href="mailto:hello@manyagupta.com"
+                href="mailto:manyag.3007@gmail.com"
                 className="font-bold text-[#361B19] hover:underline"
               >
                 Let&apos;s talk
