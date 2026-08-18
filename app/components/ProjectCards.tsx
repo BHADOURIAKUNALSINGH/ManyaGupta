@@ -11,24 +11,7 @@ const PROJECTS: Project[] = [
     subtitle: "Real-time Transcription & Note-taking",
     tags: ["Product Design", "UX Research", "AI Product"],
     description: "Designed an AI-powered meeting experience that helps users stay present while turning conversations into clear, structured documentation.",
-    image: "/meetCatch_card.png",
-    stats: [
-      { value: "80%", label: "Note-writing saved" },
-      { value: "4.9 ★", label: "App Store Rating" },
-      { value: "Real-time", label: "Transcription" }
-    ],
-    caseStudy: {
-      challenge: "Meetings often lead to lost action items and disjointed summaries. Remote teams struggle to capture critical decisions while actively participating in discussions. Meetcatch solves this by recording, transcribing, and generating instant, actionable documentation in real-time.",
-      approach: "Conducted research with 50+ product managers and engineers to analyze meeting workflow leaks. Discovered that manual note-taking reduces active participation by 40%. Designed a clean, mobile-first companion app interface.",
-      solution: "Developed a real-time transcription parser with speaker diarization. Integrated calendar syncing and immediate template exports for Notion, Slack, and Jira.",
-      outcome: "Meetcatch enables teams to stay present during calls, reducing meeting note-writing cycles by 80% and increasing post-meeting follow-up clarity.",
-      resultsList: [
-        "Designed real-time mobile audio recording interface.",
-        "Created structured automated templates for Action Items.",
-        "Built comprehensive meeting history modules.",
-        "Integrated quick-share links for Slack and Notion sync."
-      ]
-    }
+    image: "/meetCatch_Card.png",
   },
   {
     id: "canon",
