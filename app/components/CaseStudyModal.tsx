@@ -102,12 +102,12 @@ function ScrollImage({ src, title, scrollContainerRef }: ScrollImageProps) {
 }
 
 const getCaseStudyImage = (projectId: string) => {
-  if (projectId === "aura") return "/portfolio/case-study.webp";
+  if (projectId === "aura") return "/meetCatch_Card.png";
   if (projectId === "vertex") return "/vertex.png";
   if (projectId === "canon") return "/canon_card.png";
   if (projectId === "dodge") return "/dodge_card.png";
   if (projectId === "chronos") return "/chronos.png";
-  return "/portfolio/case-study.webp";
+  return "/meetCatch_Card.png";
 };
 
 export default function CaseStudyModal({ isOpen, onClose, project }: CaseStudyModalProps) {

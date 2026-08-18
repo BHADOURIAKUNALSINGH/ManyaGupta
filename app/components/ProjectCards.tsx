@@ -11,7 +11,7 @@ const PROJECTS: Project[] = [
     subtitle: "Real-time Transcription & Note-taking",
     tags: ["Product Design", "UX Research", "AI Product"],
     description: "Designed an AI-powered meeting experience that helps users stay present while turning conversations into clear, structured documentation.",
-    image: "/meetCatch_Card.png",
+    image: "/meetCatch_Card.png"
   },
   {
     id: "canon",
