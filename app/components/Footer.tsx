@@ -56,11 +56,11 @@ export default function Footer() {
       <img 
         src="/footer_ascii.png" 
         alt="Smiley ASCII Art" 
-        className="absolute right-0 top-[45%] -translate-y-1/2 w-[450px] max-w-none h-auto opacity-70 select-none hidden md:block -mr-[112px] pointer-events-none"
+        className="absolute right-0 top-[45%] -translate-y-[40%] w-[450px] max-w-none h-auto opacity-70 select-none hidden md:block -mr-[112px] pointer-events-none scale-150"
       />
 
       {/* Copyright signature - Left-aligned at the bottom */}
-      <div className="max-w-6xl mx-auto px-6 w-full text-left text-xs font-semibold text-[#361B19]/60 font-body select-none pt-12 relative z-10">
+      <div className="max-w-6xl mx-auto px-6 w-full text-left text-xs font-semibold text-[#361B19]/60 font-body select-none pt-12 translate-y-[2.5rem] relative z-10">
         © 2026 Manya Gupta. Designed with curiosity
       </div>
     </footer>

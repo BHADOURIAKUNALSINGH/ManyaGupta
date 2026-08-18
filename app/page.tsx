@@ -30,23 +30,8 @@ export default function Home() {
           {/* Intro Description */}
           <div className="max-w-xl space-y-6 text-center">
             <p className="text-m text-black leading-snug font-light">
-              Designer who loves making tech useful,<br/> usable and beautiful for people globally
+              A designer who loves making tech useful,<br/> usable and beautiful for people globally
             </p>
-
-            {/* <div className="flex gap-6 justify-center items-center pt-2">
-              <a 
-                href="#work" 
-                className="px-6 py-3 rounded-full bg-[#361B19] text-[#F5EFE6] hover:bg-[#361B19]/90 font-bold transition-all shadow-md"
-              >
-                View selected work
-              </a>
-              <a 
-                href="mailto:manyag.3007@gmail.com"
-                className="font-bold text-[#361B19] hover:underline"
-              >
-                Let&apos;s talk
-              </a>
-            </div> */}
           </div>
 
         </div>

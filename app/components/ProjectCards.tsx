@@ -2,16 +2,17 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import CaseStudyModal, { Project } from "./CaseStudyModal";
+import Link from "next/link";
+import { Project } from "./CaseStudyModal";
 
-const PROJECTS: Project[] = [
+export const PROJECTS: Project[] = [
   {
-    id: "aura",
+    id: "meetcatch",
     title: "AI Meeting Recorder-Meetcatch",
     subtitle: "Real-time Transcription & Note-taking",
     tags: ["Product Design", "UX Research", "AI Product"],
     description: "Designed an AI-powered meeting experience that helps users stay present while turning conversations into clear, structured documentation.",
-    image: "/meetCatch_Card.png"
+    image: "/meetCatch_Card.png",
   },
   {
     id: "canon",
@@ -20,23 +21,6 @@ const PROJECTS: Project[] = [
     tags: ["Game Design", "UI/UX Design"],
     description: "Designed a level-based arcade game where players master their aim, defeat challenging bosses, and use power-ups to survive increasingly difficult levels.",
     image: "/canon_card.png",
-    stats: [
-      { value: "50+", label: "Levels Designed" },
-      { value: "10K+", label: "Active Players" },
-      { value: "4.8 ★", label: "Player Rating" }
-    ],
-    caseStudy: {
-      challenge: "Arcade games require perfect balance between difficulty and engagement. Players lose interest if levels are too repetitive or bosses feel unbeatable. The goal was to design an engaging progression loop with power-ups and challenging boss mechanics.",
-      approach: "Analyzed player behavior patterns in classic arcade shooters. Designed a curve where difficulty increases dynamically. Developed custom layouts for boss battles and item shop interactions.",
-      solution: "Created distinct level maps, modular power-up configurations, and a clean shop menu UI. Implemented clear feedback indicators for score, health, and special weapons.",
-      outcome: "Designed a polished game loop that keeps players engaged across 50+ levels, resulting in a high retention rate and highly positive user test feedback.",
-      resultsList: [
-        "Designed cohesive shop and reward interface panels.",
-        "Balanced level difficulty scaling progression curve.",
-        "Created interactive boss battle layouts and visual cues.",
-        "Delivered standard mobile game UI design layouts."
-      ]
-    }
   },
   {
     id: "dodge",
@@ -45,40 +29,14 @@ const PROJECTS: Project[] = [
     tags: ["Game Design", "UI/UX Design"],
     description: "Designed a fast-paced arcade game where players dodge incoming obstacles, react quickly, and survive as the challenge intensifies.",
     image: "/dodge_card.png",
-    stats: [
-      { value: "Fast-paced", label: "Gameplay" },
-      { value: "Infinite", label: "Obstacles" },
-      { value: "4.9 ★", label: "Player Rating" }
-    ],
-    caseStudy: {
-      challenge: "Arcade reaction games need immediate responsiveness and clear obstacle pathways. Players should quickly identify threats and react within milliseconds. The challenge was designing a clean, high-contrast mobile interface with smooth input controls.",
-      approach: "Conducted playtesting sessions to measure player reaction times to obstacle spawn layouts. Adjusted game speed curve dynamically based on duration. Designed clean mobile UI indicators.",
-      solution: "Created highly distinct obstacle elements and fluid swipe touch handle models. Built high-contrast game overlays and a simple retry interface.",
-      outcome: "Successfully delivered an engaging mobile arcade game design that keeps players hooked, with an average play session length increase of 35%.",
-      resultsList: [
-        "Designed clear dynamic gameplay indicators.",
-        "Balanced reaction speed levels and obstacle scaling.",
-        "Created high-fidelity swipe input layouts.",
-        "Built responsive menus and leaderboard interfaces."
-      ]
-    }
   }
 ];
 
+const MotionLink = motion(Link);
+
 export default function ProjectCards() {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeHoverId, setActiveHoverId] = useState<string | null>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  const openCaseStudy = (project: Project) => {
-    setSelectedProject(project);
-    setIsModalOpen(true);
-  };
-
-  const closeCaseStudy = () => {
-    setIsModalOpen(false);
-  };
 
   return (
     <section id="work" className="py-16 max-w-6xl mx-auto px-6">
@@ -108,13 +66,14 @@ export default function ProjectCards() {
           if (project.id === "aura") {
             imgAlignClass = "object-cover";
           } else if (project.id === "canon" || project.id === "dodge") {
-            imgAlignClass = "object-contain object-center";
+            imgAlignClass = "object-cover object-center";
           } else {
-            imgAlignClass = `object-contain ${isRightImage ? "object-right-bottom" : "object-left-bottom"}`;
+            imgAlignClass = `object-cover ${isRightImage ? "object-right-bottom" : "object-left-bottom"}`;
           }
 
           return (
-            <motion.div
+            <MotionLink
+              href={`/projects/${project.id}`}
               key={project.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +82,6 @@ export default function ProjectCards() {
               className={`flex flex-col md:flex-row overflow-hidden items-stretch md:h-[360px] group relative cursor-none bg-white/40 border border-[#361B19]/10 rounded-[2rem] shadow-sm hover:shadow-md hover:bg-white/60 transition-all duration-300 ${
                 isRightImage ? "md:flex-row-reverse" : ""
               }`}
-              onClick={() => openCaseStudy(project)}
               onMouseEnter={() => setActiveHoverId(project.id)}
               onMouseLeave={() => setActiveHoverId(null)}
               onMouseMove={(e) => {
@@ -143,8 +101,9 @@ export default function ProjectCards() {
                   alt={project.title}
                   className={`w-full h-full ${imgAlignClass}`}
                   style={{
-                    transform: (project.id === "canon" || project.id === "dodge") ? "translateY(12px) scale(1.5)" : "none",
-                    transformOrigin: (project.id === "canon" || project.id === "dodge") ? "top center" : "center"
+                    objectPosition: project.id === "meetcatch" ? "center" : undefined,
+                    objectFit: project.id === "meetcatch" ? "contain" : undefined,
+                    transform: project.id === "meetcatch" ? "scale(2)" : "none"
                   }}
                 />
               </div>
@@ -206,16 +165,10 @@ export default function ProjectCards() {
                   </span>
                 </div>
               )}
-            </motion.div>
+            </MotionLink>
           );
         })}
       </div>
-
-      <CaseStudyModal
-        isOpen={isModalOpen}
-        onClose={closeCaseStudy}
-        project={selectedProject}
-      />
     </section>
   );
 }
