@@ -28,7 +28,7 @@ export default function Home() {
           </div>
 
           {/* Intro Description */}
-          <div className="max-w-xl space-y-6 text-center">
+          <div className="md:hidden max-w-xl space-y-6 text-center mt-6">
             <p className="text-m text-black leading-snug font-light">
               A designer who loves making tech useful,<br/> usable and beautiful for people globally
             </p>

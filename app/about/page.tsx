@@ -1,9 +1,33 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AvatarCarousel from "../components/AvatarCarousel";
 
 export default function About() {
+  const [copied, setCopied] = useState(false);
+
+  const handleEmailClick = () => {
+    const email = "manyag.3007@gmail.com";
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email);
+      } else {
+        const textArea = document.createElement("textarea");
+        textArea.value = email;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textArea);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (error) {
+      console.error("Failed to copy email:", error);
+    }
+  };
+
   const experiences = [
     {
       role: "UI/UX Design Intern",
@@ -22,7 +46,7 @@ export default function About() {
       dates: "Jun 2025 – Nov 2025",
       location: "Noida, UP",
       bullets: [
-        "Designed the brand's travel app and responsive website pages, focusing on clear navigation and user-centered information architecture.",
+        "Designed the brand's responsive website pages, focusing on clear navigation and user-centered information architecture.",
         "Created social media posts, visual branding, and trip-related marketing creatives.",
         "Supported content ideation, product copy, and community outreach strategies."
       ]
@@ -65,9 +89,22 @@ export default function About() {
   ];
 
   const skills = [
-    "Product Design", "UI Design", "UX Design", "Wireframing", "Prototyping",
-    "User Research", "Visual Design", "Interaction Design", "Figma", "Canva",
-    "Affinity", "HTML/CSS", "Design Thinking", "Information Architecture"
+    "Product Design",
+"UI Design",
+"UX Design",
+"Wireframing",
+"Prototyping",
+"User Research",
+"Visual Design",
+"Interaction Design",
+"Design Thinking",
+    "Information Architecture",
+    "Game Design",
+"Figma",
+"Canva",
+"Affinity",
+    "Adobe Illustrator",
+    "HTML/CSS","JavaScript"
   ];
 
   return (
@@ -100,10 +137,13 @@ export default function About() {
                 Download resume ⬇
               </a>
               <a
-                href="mailto:manyag.3007@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#361B19] bg-transparent text-[#361B19] hover:bg-[#361B19]/5 font-mono font-bold transition-all text-sm cursor-pointer"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=manyag.3007@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleEmailClick}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#361B19] bg-transparent text-[#361B19] hover:bg-[#361B19]/5 font-body font-bold transition-all text-sm cursor-pointer min-w-[200px] justify-center"
               >
-                manyag.3007@gmail.com
+                {copied ? "Copied! ✓" : "manyag.3007@gmail.com"}
               </a>
             </div>
           </div>
@@ -127,7 +167,7 @@ export default function About() {
                   <h3 className="text-xl font-bold text-[#361B19]">
                     {exp.role} <span className="font-normal text-[#361B19]/60">•</span> {exp.company}
                   </h3>
-                  <span className="text-xs font-semibold text-[#361B19]/70 font-mono">
+                  <span className="text-xs font-semibold text-[#361B19]/70 font-body">
                     {exp.dates} &nbsp;•&nbsp; {exp.location}
                   </span>
                 </div>
@@ -152,10 +192,10 @@ export default function About() {
               <div key={idx} className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1">
                 <div>
                   <h3 className="text-xl font-bold text-[#361B19]">{edu.degree}</h3>
-                  <p className="text-sm font-semibold text-[#361B19]/70 font-mono mt-1">{edu.institution}</p>
+                  <p className="text-sm font-semibold text-[#361B19]/70 font-body mt-1">{edu.institution}</p>
                 </div>
                 <div className="text-right sm:text-left">
-                  <span className="text-xs font-semibold text-[#361B19]/70 font-mono">{edu.dates}</span>
+                  <span className="text-xs font-semibold text-[#361B19]/70 font-body">{edu.dates}</span>
                   <p className="text-sm font-bold text-[#E05A47] mt-1">{edu.details}</p>
                 </div>
               </div>
@@ -181,13 +221,13 @@ export default function About() {
                 <div>
                   <div className="flex justify-between items-start gap-2">
                     <h3 className="text-lg font-bold text-[#361B19] leading-snug group-hover:underline">{cert.name}</h3>
-                    <span className="text-xs text-[#361B19]/50 font-mono flex items-center gap-0.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="text-xs text-[#361B19]/50 font-body flex items-center gap-0.5 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
                       View ↗
                     </span>
                   </div>
-                  <p className="text-xs font-semibold text-[#361B19]/60 font-mono mt-1">{cert.issuer}</p>
+                  <p className="text-xs font-semibold text-[#361B19]/60 font-body mt-1">{cert.issuer}</p>
                 </div>
-                <span className="text-xs font-semibold text-[#E05A47] font-mono mt-4">{cert.dates}</span>
+                <span className="text-xs font-semibold text-[#E05A47] font-body mt-4">{cert.dates}</span>
               </a>
             ))}
           </div>
