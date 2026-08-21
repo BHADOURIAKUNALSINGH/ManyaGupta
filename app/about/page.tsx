@@ -30,7 +30,7 @@ export default function About() {
 
   const experiences = [
     {
-      role: "UI/UX Design Intern",
+      role: "UI/UX Designer",
       company: "Web3task Pvt. Ltd.",
       dates: "Jan 2026 – Jun 2026",
       location: "Noida, UP",
