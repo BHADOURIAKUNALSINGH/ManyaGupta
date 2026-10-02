@@ -35,31 +35,30 @@ export default function About() {
       dates: "Jan 2026 – Jun 2026",
       location: "Noida, UP",
       bullets: [
-        "Designed intuitive user interfaces and interactive prototypes for AI-powered applications, gaming applications, and responsive websites.",
-        "Collaborated with product and engineering teams to ensure pixel-perfect layout delivery, contributing to a 10% growth in user engagement.",
-        "Developed cohesive visual assets, wireframes, and interactive component libraries in Figma."
+        "Designed end-to-end product including UI/UX, logo design and interactive figma prototypes of an AI-powered app, gaming apps and responsive websites, each currently live.",
+        "Redesigned a VPN website to fix core user navigation, contributing to 5% user growth over the period of 3 months.",
+        "Collaborated with developers and PM on handoff and iterated designs based on feedback and testing."
       ]
     },
     {
-      role: "Design, Community & Social Media Intern",
+      role: "Visual Designer Intern",
       company: "Off The Road Voyages (Furgetaway)",
       dates: "Jun 2025 – Nov 2025",
       location: "Noida, UP",
       bullets: [
-        "Designed the brand's responsive website pages, focusing on clear navigation and user-centered information architecture.",
-        "Created social media posts, visual branding, and trip-related marketing creatives.",
-        "Supported content ideation, product copy, and community outreach strategies."
+        "Designed screens for the brand's website in Figma, from wireframes to final UI.",
+        "Created 20+ social media posts and trip creatives aligned with brand identity.",
+        "Contributed to content ideation and community engagement."
       ]
     },
     {
       role: "UX Research Intern",
-      company: "Wilson Wings (Travlo App)",
+      company: "Wilson Wings",
       dates: "May 2025 – Jun 2025",
       location: "Remote",
       bullets: [
-        "Conducted user interviews and usability tests to gather qualitative feedback on the Travlo app post-launch.",
-        "Generated insightful research reports to identify user pain points and recommend product optimization areas.",
-        "Refined user personas, empathy maps, and journey maps based on real test data."
+        "Conducted 10+ user interviews to evaluate post-launch usability of the Travlo app.",
+        "Synthesized findings into reports with prioritized recommendations for the product team."
       ]
     }
   ];
@@ -68,8 +67,8 @@ export default function About() {
     {
       degree: "Bachelor of Technology in Computer Science and Engineering",
       institution: "Galgotias University",
-      dates: "Nov 2022 – July 2026",
-      details: "CGPA: 8.36"
+      dates: "2022 – 2026",
+      details: "CGPA: 8.12"
     }
   ];
 
@@ -81,30 +80,67 @@ export default function About() {
       link: "/ux design certificate.pdf"
     },
     {
-      name: "Complete Web and Mobile Designer - UI/UX+ Figma and more",
+      name: "Complete Web and Mobile Designer - UI/UX +Figma and more",
       issuer: "Udemy",
       dates: "July 2024 – Aug 2024",
       link: "/Udemy certificate.pdf"
     }
   ];
 
-  const skills = [
-    "Product Design",
-"UI Design",
-"UX Design",
-"Wireframing",
-"Prototyping",
-"User Research",
-"Visual Design",
-"Interaction Design",
-"Design Thinking",
-    "Information Architecture",
-    "Game Design",
-"Figma",
-"Canva",
-"Affinity",
-    "Adobe Illustrator",
-    "HTML/CSS","JavaScript"
+  const skillCategories = [
+    {
+      category: "UX Design",
+      items: [
+        "User Research",
+        "User Personas",
+        "User Flow",
+        "Competitive Analysis",
+        "Usability Testing",
+        "Information Architecture",
+        "Accessibility (WCAG)",
+        "Design Thinking"
+      ]
+    },
+    {
+      category: "UI Design",
+      items: [
+        "Mobile, Tablet & Web Apps",
+        "Mobile Games",
+        "Landing Pages"
+      ]
+    },
+    {
+      category: "Visual Design",
+      items: [
+        "Graphic Design",
+        "Branding",
+        "Typography",
+        "Visual Storytelling"
+      ]
+    },
+    {
+      category: "Tools",
+      items: [
+        "Figma",
+        "Adobe Illustrator",
+        "Canva",
+        "Canva’s Affinity",
+        "Google Stitch",
+        "Claude design",
+        "HTML/CSS & JavaScript(basic)"
+      ]
+    },
+    {
+      category: "Professional",
+      items: [
+        "Problem Solving",
+        "Multidisciplinary",
+        "Story Telling",
+        "Communication",
+        "Cross-functional collaboration",
+        "Time management"
+      ]
+    }
   ];
 
   return (
@@ -123,14 +159,14 @@ export default function About() {
             </h1>
             <div className="space-y-4 text-base sm:text-lg text-black leading-relaxed font-light">
               <p>
-               I’m a UX Designer with around a year of experience designing digital products and websites. My work sits at the intersection of user experience, visual design, and problem-solving.I enjoy taking messy ideas, understanding the people behind them, and turning them into experiences that feel simple, intuitive, and purposeful.
+                I’m a UI/UX Designer with ~1 year of internship experience across AI, gaming, and travel products. My work sits at the intersection of user experience, visual design, and problem-solving. I enjoy taking messy ideas, understanding the people behind them, and turning them into experiences that feel simple, intuitive, and purposeful.
               </p>
             </div>
             
             {/* Buttons */}
             <div className="flex flex-wrap gap-4 pt-4">
               <a
-                href="/manya_resume.pdf.pdf"
+                href="/Manya's Resume.pdf"
                 download
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F4B3A8] text-[#361B19] hover:bg-[#F4B3A8]/90 font-bold transition-all shadow-md text-sm cursor-pointer"
               >
@@ -239,14 +275,23 @@ export default function About() {
             <h2 className="text-3xl font-extrabold text-[#361B19] font-heading tracking-tight">Skills</h2>
           </div>
           
-          <div className="flex flex-wrap gap-2.5">
-            {skills.map((skill, idx) => (
-              <span
-                key={idx}
-                className="px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-white/50 border border-[#361B19]/10 text-[#361B19] hover:bg-[#361B19]/5 transition-colors"
-              >
-                {skill}
-              </span>
+          <div className="space-y-8">
+            {skillCategories.map((group, idx) => (
+              <div key={idx} className="space-y-3">
+                <h3 className="text-lg font-bold text-[#361B19]">
+                  {group.category}
+                </h3>
+                <div className="flex flex-wrap gap-2.5">
+                  {group.items.map((skill, sIdx) => (
+                    <span
+                      key={sIdx}
+                      className="px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-white/50 border border-[#361B19]/10 text-[#361B19] hover:bg-[#361B19]/5 transition-colors"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </section>
